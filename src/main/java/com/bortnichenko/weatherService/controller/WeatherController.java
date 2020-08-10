@@ -2,6 +2,7 @@ package com.bortnichenko.weatherService.controller;
 
 import com.bortnichenko.weatherService.model.OpenWeatherModel;
 import com.bortnichenko.weatherService.model.WeatherBitModel;
+import com.bortnichenko.weatherService.model.randomImage.RandomImageModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -49,6 +50,20 @@ public class WeatherController {
         System.out.println(weatherBitModel.getWeatherBitDtoList().get(0).getWeatherDtoList().getIcon());
         System.out.println(weatherBitModel.getWeatherBitDtoList().get(0).getCity());
         System.out.println(weatherBitModel.getWeatherBitDtoList().get(0).getWindFull());
+
+        return "";
+    }
+
+    @GetMapping("/img")
+    private String getImageUnsplash() {
+        final String url = "https://api.unsplash.com/photos/random?query=sunshine&client_id=2YSOWVB61-NgtVWuSoew5I9O4BzOTgi0642MPSCWXIY&orientation=landscape";
+        RandomImageModel randomImageModel = restTemplate.getForObject(url, RandomImageModel.class);
+
+        System.out.println(randomImageModel.getColor());
+        System.out.println(randomImageModel.getDescription());
+        System.out.println(randomImageModel.getAltDescription());
+        System.out.println(randomImageModel.getImgUrlsList().getFullUrlString());
+        System.out.println(randomImageModel.getImgUrlsList().getRegularUrlString());
 
         return "";
     }
