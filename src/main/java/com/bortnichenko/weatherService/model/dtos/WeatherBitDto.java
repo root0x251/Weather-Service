@@ -10,29 +10,58 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class WeatherBitDto {
 
-    @JsonProperty("wind_cdir_full")
-    private String windFull;
+    @JsonProperty("city_name")
+    private String cityName;
+
+    @JsonProperty("rh")
+    private int humidity;
+
+    @JsonProperty("clouds")
+    private String clouds;
+
+    @JsonProperty("wind_spd")
+    private float windSpeed;
 
     @JsonProperty("temp")
     private float temp;
-
-    @JsonProperty("city_name")
-    private String city;
 
     @JsonProperty("weather")
     private WeatherGeneralDto weatherDtoList;
 
 
-
     public WeatherBitDto() {
     }
 
-    public String getWindFull() {
-        return windFull;
+    public String getCityName() {
+        return cityName;
     }
 
-    public void setWindFull(String windFull) {
-        this.windFull = windFull;
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+
+    public int getHumidity() {
+        return humidity;
+    }
+
+    public void setHumidity(int humidity) {
+        this.humidity = humidity;
+    }
+
+    public String getClouds() {
+        return clouds;
+    }
+
+    public void setClouds(String clouds) {
+        this.clouds = clouds;
+    }
+
+    public float getWindSpeed() {
+        return windSpeed;
+    }
+
+    public void setWindSpeed(float windSpeed) {
+        this.windSpeed = windSpeed;
     }
 
     public float getTemp() {
@@ -45,14 +74,6 @@ public class WeatherBitDto {
 
     public WeatherGeneralDto getWeatherDtoList() {
         return weatherDtoList;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
     }
 
     public void setWeatherDtoList(WeatherGeneralDto weatherDtoList) {

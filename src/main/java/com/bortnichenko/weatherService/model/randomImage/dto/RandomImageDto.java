@@ -1,4 +1,4 @@
-package com.bortnichenko.weatherService.model.dtos;
+package com.bortnichenko.weatherService.model.randomImage.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

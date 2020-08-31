@@ -1,6 +1,7 @@
 package com.bortnichenko.weatherService.model.randomImage;
 
-import com.bortnichenko.weatherService.model.dtos.RandomImageDto;
+import com.bortnichenko.weatherService.model.randomImage.dto.AuthorLinks;
+import com.bortnichenko.weatherService.model.randomImage.dto.RandomImageDto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -14,13 +15,14 @@ public class RandomImageModel {
 
     @JsonProperty("color")
     private String color;
-    @JsonProperty("description")
-    private String description;
     @JsonProperty("alt_description")
     private String altDescription;
 
     @JsonProperty("urls")
     private RandomImageDto imgUrlsList;
+
+    @JsonProperty("links")
+    private AuthorLinks photographerLink;
 
     public RandomImageModel() {
     }
@@ -31,14 +33,6 @@ public class RandomImageModel {
 
     public void setColor(String color) {
         this.color = color;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getAltDescription() {
@@ -55,5 +49,13 @@ public class RandomImageModel {
 
     public void setImgUrlsList(RandomImageDto imgUrlsList) {
         this.imgUrlsList = imgUrlsList;
+    }
+
+    public AuthorLinks getPhotographerLink() {
+        return photographerLink;
+    }
+
+    public void setPhotographerLink(AuthorLinks photographerLink) {
+        this.photographerLink = photographerLink;
     }
 }
